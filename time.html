@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale-1.0">
+        <link rel="stylesheet" href="jam.css">
+        <title>TIME</title> 
+    </head>
+</head>
+<style>
+	body{background-color: #9ddfd3;}
+</style>
+<body>
+    <section>
+        <H1 style="text-align: center; color: #364f6b; font-size: 35px; font-family: 'Bebas Neue', cursive; margin-top: 155px;">Hello, today is showing o'clock</H1>
+    </section>
+</body>
+<style>
+	body {
+  background-image: url("https://i.pinimg.com/originals/f1/c4/71/f1c4714adb7ed8f99a61de311005af88.png");
+  background-size: cover;
+}
+</style>
+
+<body>
+	<div id="clock"></div>
+		<script type="text/javascript">
+		function showTime() {
+		    var a_p = "";
+		    var today = new Date();
+		    var curr_hour = today.getHours();
+		    var curr_minute = today.getMinutes();
+		    var curr_second = today.getSeconds();
+		    if (curr_hour < 12) {
+		        a_p = "AM";
+		    } else {
+		        a_p = "PM";
+		    }
+		    if (curr_hour == 0) {
+		        curr_hour = 12;
+		    }
+		    if (curr_hour > 12) {
+		        curr_hour = curr_hour - 12;
+		    }
+		    curr_hour = checkTime(curr_hour);
+		    curr_minute = checkTime(curr_minute);
+		    curr_second = checkTime(curr_second);
+		 document.getElementById('clock').innerHTML=curr_hour + ":" + curr_minute + ":" + curr_second + " " + a_p;
+		 document.getElementById('clock').style.fontSize = "70px";
+		 document.getElementById('clock').style.fontFamily = "Alfa Slab One, cursive";
+		 document.getElementById('clock').style.borderStyle = "solid";
+		 document.getElementById('clock').style.borderWidth = "5px";
+		 document.getElementById('clock').style.borderRadius = "200px";
+		 document.getElementById('clock').style.borderColor = "#ff7171";
+		 document.getElementById('clock').style.color = "#350b40";
+		    }
+
+		function checkTime(i) {
+		    if (i < 10) {
+		        i = "0" + i;
+		    }
+		    return i;
+		}
+		setInterval(showTime, 500);
+		</script>
+		<br>
+		<div id="tanggal"></div>
+		<script type='text/javascript'>
+			var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+			var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+			var date = new Date();
+			var day = date.getDate();
+			var month = date.getMonth();
+			var thisDay = date.getDay(),
+			    thisDay = myDays[thisDay];
+			var yy = date.getYear();
+			var year = (yy < 1000) ? yy + 1900 : yy;
+			document.getElementById('tanggal').innerHTML=(thisDay + ', ' + day + ' ' + months[month] + ' ' + year);
+			document.getElementById('tanggal').style.fontSize = "20px";
+			document.getElementById('tanggal').style.fontFamily = "Bebas Neue, cursive";
+			document.getElementById('tanggal').style.color = "#0f3057"
+		</script>
+		<br>
+		<div>
+			<h1 style="color: #364f6b;">Enjoy the day</h1>
+		</div>
+</body>
+</html>
